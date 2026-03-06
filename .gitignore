@@ -1,0 +1,52 @@
+# ----- Dependencies -----
+/node_modules
+/vendor
+/nova
+nova-components/*/node_modules
+nova-components/*/vendor
+composer.phar
+
+# ----- Build / compiled assets -----
+/public/build
+/public/hot
+/public/storage
+/public/vendor
+nova-components/*/dist
+
+# ----- Environment files -----
+.env
+.env.backup
+.env.production
+.env.local
+.env.staging
+
+# ----- Laravel / framework -----
+/storage/*.key
+/storage/logs/*.log
+/bootstrap/cache/*.php
+
+# ----- Testing -----
+/.phpunit.cache
+.phpunit.result.cache
+/coverage
+
+# ----- IDE / editor -----
+/.fleet
+/.idea
+/.vscode
+*.swp
+*.swo
+*~
+
+# ----- OS files -----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ----- Misc -----
+Homestead.json
+Homestead.yaml
+auth.json
+npm-debug.log
+yarn-error.log
+*.log
