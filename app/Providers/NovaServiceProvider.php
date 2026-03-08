@@ -17,6 +17,7 @@ use Laravel\Nova\Menu\MenuSection;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
+
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
     /**
@@ -44,6 +45,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function routes()
     {
+        
         Nova::routes()
             ->withAuthenticationRoutes()
             ->withPasswordResetRoutes()
@@ -75,6 +77,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             new \App\Nova\Dashboards\Main,
+            new \App\Nova\Dashboards\UserInsights,
         ];
     }
 

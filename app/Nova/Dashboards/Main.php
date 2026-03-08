@@ -26,6 +26,8 @@ class Main extends Dashboard
             new NewOrders,       // Value metric: total order count + comparison
             new OrdersPerDay,    // Trend metric: line chart of orders by day
             new OrdersByStatus,  // Partition metric: doughnut chart by status
+            // new help,
         ];
     }
+    
 }
