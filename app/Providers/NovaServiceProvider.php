@@ -32,7 +32,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
         Nova::footer(function ($request) {
             return Blade::render('
-                <center>Copyright &copy; ' . now()->year . ' <a href="https://web.facebook.com/shehan.saralk/" target="blank"> <font color="red"> Shehan Rashmika. </font></a> All Rights Reserved.<br/>Built upon the Nova Startup Foundation. Crafted with boundless love for the world.</center>
+                <center>Copyright &copy; ' . now()->year . ' <a href="https://github.com/it21387494samitha" target="blank"> <font color="red"> Samitha Dhhananjaya  </font></a> All Rights Reserved.<br/>Built upon the Nova Startup Foundation. Crafted with boundless love for the world.</center>
             ');
         });
     }
@@ -83,6 +83,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      *
      * @return array
      */
+    
     public function tools()
     {
         return [
@@ -99,7 +100,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function register()
     {
-        //
+    //     parent::register();
+
+    // Nova::initialPath('/nova/dashboards/main');
     }
 
     public function getCustomeMenu()
@@ -140,4 +143,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             ];
         });
     }
+
+
+    
 }
+
+
