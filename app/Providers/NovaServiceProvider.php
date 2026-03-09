@@ -151,8 +151,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
                 MenuSection::make('Bus',[
                     MenuGroup::make('Vehicle management',[
-                        MenuItem::resource(vehicle::class)->icon('bus'),
-                        MenuItem::resource(User::class)->icon('server')
+                        MenuItem::resource(vehicle::class)->icon('truck'),
+                        MenuItem::resource(User::class)->icon('users')
                     ])
                 ])
 

@@ -18,4 +18,15 @@ class Vehicle extends Model
         'license_plate',
         'status',
     ];
+
+
+
+    public function orders()
+    {
+        return $this->hasMany(Orders::class);
+        
+    }
+
+
+    //the vehicle can have many oredrs but the order can have only one vehicle
 }

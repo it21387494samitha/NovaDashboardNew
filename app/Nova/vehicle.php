@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use App\Nova\Metrics\TotalVehicle;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
 
 class vehicle extends Resource
 {
@@ -42,7 +45,37 @@ class vehicle extends Resource
     {
         return [
             ID::make()->sortable(),
-        ];
+
+            Text::make('Make')
+        ->sortable()
+        ->rules('required', 'max:50'),
+
+            Text::make('model')
+                ->sortable()
+                ->rules('required','max:20'),
+
+            Number::make('year')
+             ->sortable()
+             ->rules('required','integer','min:1900','max:'.(date('Y')+1)),
+       
+             Text::make('color')
+             ->sortable()
+             ->rules('required','max:20'),
+       
+            Text::make('license_plate')
+            ->sortable()
+            ->rules('nullable','max:20'),
+
+            Select::make('Status')
+        ->options([
+            'available' => 'Available',
+            'rented' => 'Rented',
+            'maintenance' => 'Maintenance',
+        ])
+        ->default('available')
+        ->rules('required'),
+            ];
+             
     }
 
     /**
@@ -89,7 +122,7 @@ class vehicle extends Resource
     public function actions(NovaRequest $request)
     {
         return [
-            
+            // new Actions\MarkAsAvailble,
         ];
     }
 }
