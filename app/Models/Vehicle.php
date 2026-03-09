@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Vehicle extends Model
 {
     use HasFactory;
+
+
+    protected $fillable = [
+        'make',
+        'model',
+        'year',
+        'color',
+        'license_plate',
+        'status',
+    ];
 }

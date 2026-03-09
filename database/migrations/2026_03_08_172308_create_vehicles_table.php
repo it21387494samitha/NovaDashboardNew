@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
+            $table->String('make');
+            $table->String('model');
+            $table->Integer('year');
+            $table->String('color');
+            $table->String('license_plate')->unique();
+            $table->enum('status',['available','rented','maintenance'])->default('available');
             $table->timestamps();
+            
         });
     }
 

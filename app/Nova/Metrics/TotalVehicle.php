@@ -5,6 +5,7 @@ namespace App\Nova\Metrics;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Value;
 use Laravel\Nova\Nova;
+use App\Models\Vehicle as Model;
 
 class TotalVehicle extends Value
 {

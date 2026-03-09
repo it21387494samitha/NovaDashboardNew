@@ -4,7 +4,8 @@ namespace App\Nova\Dashboards;
 
 
 use Laravel\Nova\Dashboard;
-use App\Nova\Metrics\NewOrders;
+use App\Nova\Metrics\TotalVehicle;
+// use App\Nova\Metrics\TotalVehicle;
 
 class UserInsights extends Dashboard
 {
@@ -16,7 +17,8 @@ class UserInsights extends Dashboard
     public function cards()
     {
         return [
-            new NewOrders,      
+            // new NewOrders,  
+            new TotalVehicle,    
         ];
     }
 
