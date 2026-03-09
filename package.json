@@ -5,7 +5,13 @@
         "dev": "vite",
         "build": "vite build",
         "build-testing-compo": "cd nova-components/TestingCompo && npm run dev",
-        "build-testing-compo-prod": "cd nova-components/TestingCompo && npm run prod"
+        "build-testing-compo-prod": "cd nova-components/TestingCompo && npm run prod",
+        "build-vehicles": "cd nova-components/Vehicles && npm run dev",
+        "build-vehicles-prod": "cd nova-components/Vehicles && npm run prod",
+        "build-vehicl": "cd nova-components/Vehicl && npm run dev",
+        "build-vehicl-prod": "cd nova-components/Vehicl && npm run prod",
+        "build-bus": "cd nova-components/Bus && npm run dev",
+        "build-bus-prod": "cd nova-components/Bus && npm run prod"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",

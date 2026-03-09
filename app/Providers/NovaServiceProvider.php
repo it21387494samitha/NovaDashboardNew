@@ -3,10 +3,12 @@
 namespace App\Providers;
 
 use App\Nova\Dashboards\Main;
+use App\Nova\Dashboards\UserInsights;
 use App\Nova\Company;
 use App\Nova\Order;
 use App\Nova\Role;
 use App\Nova\User;
+use App\Nova\vehicle;
 use Bolechen\NovaActivitylog\Resources\Activitylog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
@@ -83,7 +85,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     /**
      * Get the tools that should be listed in the Nova sidebar.
-     *
+     *  
      * @return array
      */
     
@@ -93,6 +95,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             new \Pktharindu\NovaPermissions\NovaPermissions(),
             new \Bolechen\NovaActivitylog\NovaActivitylog(),
             new \Samitha\TestingCompo\TestingCompo(),  // Our custom Vue.js tool
+            new \Samitha\Bus\Bus(),
+            // new \Acme\Vehicles\Vehicles(),
+            // new \samitha\
+
         ];
     }
 
@@ -141,6 +147,14 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                         MenuItem::resource(Order::class)->icon('currency-dollar'),
                     ]),
                 ])->icon('shopping-cart'),
+
+
+                MenuSection::make('Bus',[
+                    MenuGroup::make('Vehicle management',[
+                        MenuItem::resource(vehicle::class)->icon('bus'),
+                        MenuItem::resource(User::class)->icon('server')
+                    ])
+                ])
 
 
             ];

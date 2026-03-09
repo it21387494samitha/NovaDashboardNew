@@ -19,7 +19,10 @@
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.0",
         "pktharindu/nova-permissions": "^3.0",
-        "samitha/testing-compo": "@dev"
+        "samitha/testing-compo": "@dev",
+        "acme/vehicles": "@dev",
+        "samitha/vehicl": "@dev",
+        "samitha/bus": "@dev"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -35,7 +38,8 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "Samitha\\TestingCompo\\": "nova-components/TestingCompo/src/"
+            "Samitha\\TestingCompo\\": "nova-components/TestingCompo/src/",
+            "Samitha\\Bus\\":"nova-components/Bus/src/"
         }
     },
     "autoload-dev": {
@@ -82,6 +86,30 @@
         {
             "type": "path",
             "url": "./nova-components/TestingCompo"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Vehicles"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Vehicles"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Vehicles"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Vehicles"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Vehicl"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Bus"
         }
     ]
 }
