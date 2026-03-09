@@ -14,6 +14,8 @@ use Laravel\Nova\Fields\Textarea;   // Multi-line text
 use Laravel\Nova\Http\Requests\NovaRequest;
 use App\Nova\Actions\MarkAsPaid;     // Our custom action
 use Laravel\Nova\Actions\ExportAsCsv; // Nova's built-in CSV export
+use App\Nova\Actions\AssignVehicle;  
+ 
 
 class Order extends Resource
 {
@@ -79,7 +81,14 @@ class Order extends Resource
                 ->sortable()
                 ->hideWhenCreating()   // Auto-filled by Laravel
                 ->hideWhenUpdating(),  // Not editable
-        ];
+        
+        
+            BelongsTo::make('Vehicle', 'vehicle', \App\Nova\vehicle::class)
+           ->nullable()
+            ->searchable()
+            ->sortable(),
+
+                ];
     }
 
     /**
@@ -131,8 +140,10 @@ class Order extends Resource
     public function actions(NovaRequest $request)
     {
         return [
-            new MarkAsPaid,               // Bulk-update status to "paid"
+            new MarkAsPaid,      
+             new AssignVehicle,         
             ExportAsCsv::make(),          // Built-in CSV export (standalone = appears without selecting records)
+                      
         ];
     }
 }

@@ -9,6 +9,7 @@ use App\Nova\Metrics\TotalVehicle;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\HasMany;
 
 class vehicle extends Resource
 {
@@ -74,8 +75,13 @@ class vehicle extends Resource
         ])
         ->default('available')
         ->rules('required'),
-            ];
+         
+
+            HasMany::make('Orders'),
+            // this is used for the show the orders in vehicle details page.. as a field
+        ];
              
+
     }
 
     /**

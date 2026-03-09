@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Vehicle;
 
 class Order extends Model
 {
@@ -11,6 +12,7 @@ class Order extends Model
 
     protected $fillable = [
         'company_id',
+        'vehicle_id',
         'amount',
         'status',
         'notes',
@@ -27,5 +29,9 @@ class Order extends Model
     public function company()
     {
         return $this->belongsTo(Company::class);
+    }
+    public function vehicle()
+    {
+        return $this->belongsTo(Vehicle::class);
     }
 }
