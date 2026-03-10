@@ -31,6 +31,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         parent::boot();
         Nova::withBreadcrumbs();
+        Nova::style('custom', public_path('css/nova-custom.css'));
         $this->getCustomeMenu();
 
         Nova::footer(function ($request) {
@@ -153,8 +154,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     MenuGroup::make('Vehicle management',[
                         MenuItem::resource(vehicle::class)->icon('truck'),
                         MenuItem::resource(User::class)->icon('users')
-                    ])
-                ])
+                    ]) 
+                ]) ->icon('truck'),
 
 
             ];

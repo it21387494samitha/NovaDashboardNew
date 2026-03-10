@@ -1,0 +1,15 @@
+/* Custom Nova Branding Styles */
+
+/* Make logo bigger in the sidebar/header */
+[dusk="sidebar-logo"] svg,
+.h-6 svg[viewBox="0 0 900 300"] {
+    height: 2.5rem !important;
+    width: auto !important;
+}
+
+/* Make logo bigger on the login page */
+[class*="Auth"] svg[viewBox="0 0 900 300"],
+.h-8 svg[viewBox="0 0 900 300"] {
+    height: 4rem !important;
+    width: auto !important;
+}
