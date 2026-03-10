@@ -55,6 +55,7 @@ class vehicle extends Resource
                 ->sortable()
                 ->rules('required','max:20'),
 
+                
             Number::make('year')
              ->sortable()
              ->rules('required','integer','min:1900','max:'.(date('Y')+1)),
@@ -75,6 +76,13 @@ class vehicle extends Resource
         ])
         ->default('available')
         ->rules('required'),
+
+        Text::make('Bus Details',function(){
+            return '<a href="/nova/bus/busdetails/'.$this->id.'" class="no-underline font-bold dim text-primary">View Bus Details</a>';
+
+        })->asHtml()->exceptOnForms(),
+
+
          
 
             HasMany::make('Orders'),

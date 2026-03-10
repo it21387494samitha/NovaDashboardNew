@@ -22,8 +22,12 @@ Route::get('/orders', function (NovaRequest $request) {
     return inertia('BusOrders');
 });
 
-Route::get('/vehicles-locations',function (NovaReuest $request){
-    return inertiia('busvehicleslocations');
+Route::get('/vehicle-locations', function (NovaRequest $request) {
+    return inertia('BusVehiclesLocations');
+});
+
+Route::get('busdetails/{id}', function (NovaRequest $request, $id) {
+    return inertia('BusDetails', ['busId' => $id]);
 });
 
 

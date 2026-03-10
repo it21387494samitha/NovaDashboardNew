@@ -9,6 +9,7 @@ use App\Nova\Order;
 use App\Nova\Role;
 use App\Nova\User;
 use App\Nova\vehicle;
+use App\Nova\Bus;
 use Bolechen\NovaActivitylog\Resources\Activitylog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
@@ -153,9 +154,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 MenuSection::make('Bus',[
                     MenuGroup::make('Vehicle management',[
                         MenuItem::resource(vehicle::class)->icon('truck'),
-                        MenuItem::resource(User::class)->icon('users')
+                        MenuItem::resource(User::class)->icon('users'),
+                        MenuItem::link('Vehicle Live Location', '/bus/vehicle-locations')->icon('location-marker'),
                     ]) 
                 ]) ->icon('truck'),
+
 
 
             ];

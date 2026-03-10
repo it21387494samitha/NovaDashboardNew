@@ -3,9 +3,9 @@
     <Head title="Vehicle Live Location" />
 
     <div class="mb-6 flex items-center justify-between">
-      <Heading>Vehicle Live Location (Try 1)</Heading>
+    <Heading>Live Location Coordinates</Heading>
       <div class="flex gap-2">
-        <Link href="/bus" class="btn btn-default">Bus Home</Link>
+        <Link href="/bu" class="btn btn-default">Vehicle Home</Link>
         <button class="btn btn-default" @click="fetchVehicles" :disabled="loading">
           {{ loading ? 'Refreshing...' : 'Refresh now' }}
         </button>
@@ -14,7 +14,7 @@
 
     <Card class="p-6">
       <p class="mb-4 text-80 text-sm">
-        Try 1 page: no GPS tracking yet. Showing demo coordinates from API.
+       This is only for demonstrain purposes. it shows the Latitude and longitude in table. <span class="text-lg text-red-500">Demo only</span>
       </p>
 
       <div v-if="error" class="mb-4 rounded border border-danger bg-danger-soft p-3 text-danger">
@@ -64,7 +64,7 @@ export default {
 
   mounted() {
     this.fetchVehicles()
-    this.intervalId = setInterval(this.fetchVehicles, 5000) // simple "live" refresh
+    this.intervalId = setInterval(this.fetchVehicles, 500000)  //to refresh evry 500000ms
   },
 
   beforeUnmount() {

@@ -171,6 +171,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
+
+        // Local Nova tool provider (explicitly registered because package discovery cache currently misses samitha/bus).
+        Samitha\Bus\ToolServiceProvider::class,
     ])->toArray(),
 
     /*

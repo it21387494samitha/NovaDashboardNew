@@ -3,7 +3,7 @@
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\vehicle;
+use App\Models\Vehicle;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,15 +44,16 @@ Route::get('/orders', function (Request $request) {
 });
 
 
-$baseLat = 6.9271;   
-$baseLng = 79.8612;
 
-Route::get('/vehicles-locations',function(Request $request){
-    $vehicles = vehicle::query()
+
+Route::get('/vehicle-locations',function(Request $request){
+    $baseLat = 6.9271;   
+$baseLng = 79.8612;
+    $vehicles = Vehicle::query()
     ->latest('id')
     ->limit(20)
     ->get()
-    ->map(function(vehicle $vehicle )use ($baseLat,$baseLng){
+    ->map(function (Vehicle $vehicle) use ($baseLat, $baseLng) {
         $offset = (($vehicle->id % 20 )-10)*0.005;
         return [
             'id' => $vehicle->id,
@@ -67,5 +68,27 @@ Route::get('/vehicles-locations',function(Request $request){
 
     return response()-> json([
         'vehicles' => $vehicles,
+    ]);
+});
+
+
+
+Route::get('/busdetails/{id}', function (Request $request, $id) {
+    $vehicle = Vehicle::find($id);
+
+    if (!$vehicle) {
+        return response()->json(['error' => 'Vehicle not found'], 404);
+    }
+
+    return response()->json([
+        'id' => $vehicle->id,
+        'make' => $vehicle->make,
+        'model' => $vehicle->model,
+        'year' => $vehicle->year,
+        'color' => $vehicle->color,
+        'license_plate' => $vehicle->license_plate,
+        'status' => $vehicle->status,
+        'created_at' => $vehicle->created_at->toDateTimeString(),
+        'updated_at' => $vehicle->updated_at->toDateTimeString(),
     ]);
 });
