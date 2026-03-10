@@ -2,7 +2,15 @@
   <div>
     <Head title="Bus" />
 
-    <Heading class="mb-6">Bus</Heading>
+    <div class="mb-6 flex items-center justify-between gap-4">
+      <Heading>Bus</Heading>
+
+      <div class="flex items-center gap-2">
+        <Link href="/bus/orders" class="btn btn-default">Open Orders Custom Page</Link>
+        <Link href="/bus/vehicle-locations" class="btn btn-default">Vehicle Live Location</Link>
+      </div>
+      
+    </div>
 
     <Card
       class="flex flex-col items-center justify-center"
@@ -21,16 +29,29 @@
         />
       </svg>
 
-      <h1 class="dark:text-white text-4xl font-light mb-6">
-        We're in a black hole.
+      <h1 class="dark:text-white text-3xl font-light mb-6">
+        Bus tool custom pages example
       </h1>
 
-      <p class="dark:text-white text-lg opacity-70">
-        You can edit this tool's component at:
+      <p class="dark:text-white text-base opacity-70 mb-4">
+        Use this starter page to navigate to a custom Orders page and learn the full flow.
+      </p>
+
+      <p class="dark:text-white text-base opacity-70">
+        You can edit this page at:
         <code
           class="ml-1 border border-gray-100 dark:border-gray-900 text-sm font-mono text-white bg-black rounded px-2 py-1"
         >
           /nova-components/Bus/resources/js/pages/Tool.vue
+        </code>
+      </p>
+
+      <p class="dark:text-white text-base opacity-70 mt-4">
+        Orders page source:
+        <code
+          class="ml-1 border border-gray-100 dark:border-gray-900 text-sm font-mono text-white bg-black rounded px-2 py-1"
+        >
+          /nova-components/Bus/resources/js/pages/Orders.vue
         </code>
       </p>
     </Card>

@@ -17,3 +17,13 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 Route::get('/', function (NovaRequest $request) {
     return inertia('Bus');
 });
+
+Route::get('/orders', function (NovaRequest $request) {
+    return inertia('BusOrders');
+});
+
+Route::get('/vehicles-locations',function (NovaReuest $request){
+    return inertiia('busvehicleslocations');
+});
+
+
