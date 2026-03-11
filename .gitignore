@@ -1,7 +1,7 @@
 # ----- Dependencies -----
 /node_modules
 /vendor
-/nova
+# /nova
 nova-components/*/node_modules
 nova-components/*/vendor
 composer.phar
